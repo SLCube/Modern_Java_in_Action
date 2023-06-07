@@ -1,9 +1,14 @@
 package ch1.before_improvement;
 
+import ch1.common.Apple;
+import ch1.common.AppleGreenColorPredicate;
+import ch1.common.AppleHeavyWeightPredicate;
+import ch1.common.ApplePredicate;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import static ch1.before_improvement.Color.*;
+import static ch1.common.Color.*;
 
 public class Main {
     public static void main(String[] args) {

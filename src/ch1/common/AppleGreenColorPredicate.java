@@ -1,6 +1,6 @@
-package ch1.before_improvement;
+package ch1.common;
 
-import static ch1.before_improvement.Color.*;
+import static ch1.common.Color.*;
 
 public class AppleGreenColorPredicate implements ApplePredicate {
 

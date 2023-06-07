@@ -1,4 +1,6 @@
-package ch1.before_improvement;
+package ch1.common;
+
+import ch1.common.Apple;
 
 /**
  * strategy pattern 이용

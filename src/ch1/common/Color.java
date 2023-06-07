@@ -1,4 +1,4 @@
-package ch1.before_improvement;
+package ch1.common;
 
 public enum Color {
     GREEN("green"),
