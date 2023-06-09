@@ -1,7 +1,7 @@
-package ch1.anonymous_class;
+package lambda.ch1.anonymous_class;
 
-import ch1.common.Apple;
-import ch1.common.ApplePredicate;
+import lambda.ch1.common.Apple;
+import lambda.ch1.common.ApplePredicate;
 
 import java.util.ArrayList;
 import java.util.List;

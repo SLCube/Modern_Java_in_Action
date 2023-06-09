@@ -1,12 +1,12 @@
-package ch1.lambda;
+package lambda.ch1.lambda;
 
-import ch1.common.Apple;
-import ch1.common.ApplePredicate;
+import lambda.ch1.common.Apple;
+import lambda.ch1.common.ApplePredicate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static ch1.common.Color.RED;
+import static lambda.ch1.common.Color.RED;
 
 public class Main {
     public static void main(String[] args) {

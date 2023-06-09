@@ -1,6 +1,6 @@
-package ch1.common;
+package lambda.ch1.common;
 
-import static ch1.common.Color.*;
+import static lambda.ch1.common.Color.*;
 
 public class AppleGreenColorPredicate implements ApplePredicate {
 

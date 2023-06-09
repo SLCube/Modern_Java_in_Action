@@ -1,4 +1,4 @@
-package ch3;
+package lambda.ch3;
 
 /**
  * Functional Interface Annotation이 명시되지 않아도 하나의 method가 인터페이스에 선언되있으면 함수형 인터페이스,

@@ -1,6 +1,4 @@
-package ch1.common;
-
-import ch1.common.Apple;
+package lambda.ch1.common;
 
 /**
  * strategy pattern 이용

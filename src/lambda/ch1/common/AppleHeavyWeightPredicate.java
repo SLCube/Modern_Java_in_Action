@@ -1,4 +1,4 @@
-package ch1.common;
+package lambda.ch1.common;
 
 public class AppleHeavyWeightPredicate implements ApplePredicate {
     @Override
