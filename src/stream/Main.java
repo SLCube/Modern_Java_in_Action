@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
-import static stream.Dish.Type.*;
+import static stream.DishFactory.getMenu;
+import static stream.DishFactory.getSpecialMenu;
 
 /**
  * Collection vs Stream
@@ -20,7 +21,7 @@ import static stream.Dish.Type.*;
  */
 public class Main {
     public static void main(String[] args) {
-        List<Dish> menu = DishFactory.getMenu();
+        List<Dish> menu = getMenu();
 
         List<String> threeHighCaloricDishNames = menu.stream()
                 .filter(dish -> dish.getCalories() > 300)
@@ -48,6 +49,44 @@ public class Main {
                 .filter(number -> number % 2 == 0)
                 .distinct()
                 .forEach(System.out::println);
+
+        List<Dish> specialMenu = getSpecialMenu();
+
+        // 320 calories 이하의 음식 일반적인 필터링
+        List<Dish> filteredMenu = specialMenu.stream()
+                .filter(dish -> dish.getCalories() < 320)
+                .collect(toList());
+
+        // special menu는 이미 칼로리순으로 정렬이 되있다.
+        // takeWhile은 순차적으로 collection을 탐색하면서 해당 조건인 요소들을 취함.
+        // 해당조건이 false가 되는순간 stream은 종료됨. 정렬이 중요함.
+        List<Dish> slicedMenu1 = specialMenu.stream()
+                .takeWhile(dish -> dish.getCalories() < 320)
+                .collect(toList());
+        System.out.println("slicedMenu1 = " + slicedMenu1);
+
+        // dropWhile은 takeWhile과 반대로 순차적으로 collection을 탐색하면서 해당 조건인 요소들을 버림.
+        // 이 또한 정렬이 중요함.
+        List<Dish> slicedMenu2 = specialMenu.stream()
+                .dropWhile(dish -> dish.getCalories() < 320)
+                .collect(toList());
+        System.out.println("slicedMenu2 = " + slicedMenu2);
+
+        // 정리하자면 takeWhile과 dropWhile은 특정기준에 의해 정렬된 collection에 사용하면 적절하다.
+        // 정렬되지 않은 collection에 적용하면 예상치 않은 동작을 하게 될 수 있다.
+
+        //==================================================================//
+        // limit은 sql에서의 limit과 동일한 기능을 제공한다.
+        // skip은 처음 n개의 요소를 건너뛴 stream을 제공한다.
+        List<Dish> dishes = specialMenu.stream()
+                .filter(dish -> dish.getCalories() > 300)
+                .limit(3)
+                .collect(toList());
+
+        List<Dish> skipDished = specialMenu.stream()
+                .filter(dish -> dish.getCalories() > 300)
+                .skip(2)
+                .collect(toList());
 
 
     }
