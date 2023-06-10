@@ -19,7 +19,7 @@ import static stream.DishFactory.getSpecialMenu;
  * <p>
  * 비유하자면 Collection은 DVD로 Stream은 인터넷 스트리밍 영상매체로 비유할 수 있다.
  */
-public class Main {
+public class StreamSlicing {
     public static void main(String[] args) {
         List<Dish> menu = getMenu();
 
